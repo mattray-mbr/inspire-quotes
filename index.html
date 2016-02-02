@@ -15,20 +15,27 @@
 		<p class="sub-head">An app to share, review, and rate inspirational quotes</p>
 	</header>
 	<aside class="right-bar">
+		<h2 class="sidebar-title">Add New Quote</h2>
 		<div class="add-quote">
-			<h3 class="sidebar-title">Add A Quote</h3>
 			<form class="quote-form" action="" ng-submit="addQuote($event)">
 				<label for="">Author</label><input type="text" required ng-model="addAuthor">
-				<label for="">Text</label><textarea name="" id="" cols="20" rows="10" required ng-model="addText"></textarea>
+				<label for="">Text</label><textarea class="quote-text" required ng-model="addText"></textarea>
 				<input class="submit btn btn-warning" type="submit" placeholder="submit">
 			</form>
+			<div class="random">
+				<!-- popup display for random quote -->
+				<div class="popup" ng-show="showPopup">
+					<h2>Your Random Quote For The Day Is</h2>
+					<h3>{{randomQ.author}}</h3>
+					<blockquote>{{randomQ.text}}</blockquote>
+					<button class="btn close-pop" ng-click="closePop()">Close</button>
+				</div>
+				<button class="random-btn btn btn-success" ng-click="random($event)">Produce Random Quote</button>
+			</div> <!-- random -->
 		</div> <!-- add quote -->
-		<div class="random">
-			<button class="btn btn-success">produce random quote</button>
-		</div> <!-- random -->
-	</aside> <!-- add-quote -->
+	</aside> <!-- side bar -->
 	<div class="main-container">
-		<h2 class="quote-header">List of quotes</h2>
+		<h2 class="quote-header">Recently Added Quotes</h2>
 		<div class="quote-list" ng-repeat="quote in quotes">
 		<button class="remove-btn btn btn-danger btn-xs" ng-click="removeQuote($index)">X</button>
 			<h3>{{quote.author}}</h3>
