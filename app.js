@@ -18,7 +18,18 @@ var app = angular.module('myApp', [])
 		]
 
 		$scope.addQuote = function(event){
+			var newQuote = {
+				author: $scope.addAuthor,
+				text: $scope.addText,
+			}
+			$scope.quotes.push(newQuote)
+			event.preventDefault();
+			$scope.addAuthor = ''
+			$scope.addText = ''
+		}
 
+		$scope.removeQuote = function(index){
+			$scope.quotes.splice(index, 1)
 		}
 
 
