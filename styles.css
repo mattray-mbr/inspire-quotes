@@ -1,0 +1,95 @@
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+
+* {
+	box-sizing: border-box;
+}
+body {
+	background: url(bg.png);
+}
+h1, h2, h3, h4 {
+	margin: 0;
+}
+blockquote {
+	font-style: italic;
+}
+.app-header {
+	width: 85%;
+	background-color: #e66854;
+	/*border: 1px solid black;*/
+	box-shadow: 5px 5px 10px #666;
+	height: 110px;
+	border-radius: 0 20px 20px 0;
+	padding-top: 20px;
+}
+.title {
+	font-size: 50px;
+	font-family: lobster;
+	margin-left: 50px;
+}
+.sub-head {
+	margin-left: 15%;
+	font-size: 16px;
+}
+.right-bar {
+	margin-top: 50px;
+	float: right;
+	background-color: #fff;
+	height: 80vh;
+	border-radius: 10px;
+}
+.sidebar-title {
+	text-align: center;
+	margin-top: 10px;
+}
+.quote-form {
+	padding: 10px;
+	border: 1px solid black;
+	margin: 10px;
+	overflow: hidden;
+}
+.random {
+	height: 200px;
+	padding: 30px;
+}
+.main-container {
+	background-color: #fff;
+	float: left;
+	margin-top: 50px;
+	border-radius: 10px;
+	height: 80vh;
+}
+.quote-header {
+	text-align: center;
+}
+.quote-list{
+	margin: 20px;
+	border: 2px solid black;
+	padding: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
