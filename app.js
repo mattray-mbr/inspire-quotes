@@ -7,22 +7,22 @@ var app = angular.module('myApp', [])
 			{
 				author: "H. Jackson Brown, Jr.",
 				text: "The best preparation for tomorrow is doing your best today.",
-				rating: '',
+				rating: 0,
 			},
 			{
 				author: "Salvador Dali",
 				text: "Intelligence without ambition is a bird without wings.",
-				rating: '',
+				rating: 0,
 			},
 			{
 				author: "Lao Tzu",
 				text: "When you realize nothing is lacking, the whole world belongs to you.",
-				rating: '',
+				rating: 0,
 			},
 			{
 				author: "Dr. Wayne Dyer",
 				text: "Peace is the result of retraining your mind to process life as it is, rather than as you think it should be.",
-				rating: '',
+				rating: 0,
 			},
 		]
 
@@ -36,6 +36,33 @@ var app = angular.module('myApp', [])
 			$scope.addAuthor = ''
 			$scope.addText = ''
 		}
+
+		var sort = function(){$scope.quotes.sort(function(a, b){
+			return b.rating - a.rating
+			});
+		}
+		//------------ ratings ---------------
+		$scope.oneStar = function(index){
+			$scope.quotes[index].rating = 1
+			sort();
+		}
+		$scope.twoStars = function(index){
+			$scope.quotes[index].rating = 2
+			sort();
+		}
+		$scope.threeStars = function(index){
+			$scope.quotes[index].rating = 3
+			sort();
+		}
+		$scope.fourStars = function(index){
+			$scope.quotes[index].rating = 4
+			sort();
+		}
+		$scope.fiveStars = function(index){
+			$scope.quotes[index].rating = 5
+			sort();
+		}
+		//----------- end ratings -------------
 
 		$scope.removeQuote = function(index){
 			$scope.quotes.splice(index, 1)

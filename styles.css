@@ -73,7 +73,7 @@ label, textarea {
 }
 .sidebar-title {
 	text-align: center;
-	margin-top: 10px;
+	margin-bottom: 10px;
 	color:#ffc992;
 }
 .add-quote {
@@ -152,6 +152,9 @@ label, textarea {
 }
 .remove-btn {
 	float: right;
+}
+.rating-container {
+	display: inline-block;
 }
 
 

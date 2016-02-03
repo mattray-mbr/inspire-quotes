@@ -28,6 +28,7 @@
 					<h2>Your Random Quote For The Day Is</h2>
 					<h3>{{randomQ.author}}</h3>
 					<blockquote>{{randomQ.text}}</blockquote>
+					<p class="rating glyphicon glyphicon-fire"></p>
 					<button class="btn close-pop" ng-click="closePop()">Close</button>
 				</div>
 				<button class="random-btn btn btn-success" ng-click="random($event)">Produce Random Quote</button>
@@ -42,7 +43,26 @@
 			<blockquote>
 				<p>{{quote.text}}</p>
 			</blockquote>
+			<div class="rating-container">Rating: 
+				<span class="glyphicon glyphicon-star-empty" ng-click="oneStar($index)"></span>
+				<span class="glyphicon glyphicon-star-empty glyphicon-star" ng-click="twoStars($index)"></span>
+				<span class="glyphicon glyphicon-star-empty" ng-click="threeStars($index)"></span>
+				<span class="glyphicon glyphicon-star-empty" ng-click="fourStars($index)"></span>
+				<span class="glyphicon glyphicon-star-empty" ng-click="fiveStars($index)"></span>
+			</div>
 		</div>
 	</div> <!-- main-container -->
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
