@@ -44,11 +44,8 @@
 				<p>{{quote.text}}</p>
 			</blockquote>
 			<div class="rating-container">Rating: 
-				<span class="glyphicon glyphicon-star-empty" ng-click="oneStar($index)"></span>
-				<span class="glyphicon glyphicon-star-empty glyphicon-star" ng-click="twoStars($index)"></span>
-				<span class="glyphicon glyphicon-star-empty" ng-click="threeStars($index)"></span>
-				<span class="glyphicon glyphicon-star-empty" ng-click="fourStars($index)"></span>
-				<span class="glyphicon glyphicon-star-empty" ng-click="fiveStars($index)"></span>
+				<button class="btn btn-danger btn-xxs" ng-click="subtractRating($index)">-</button>
+				<button class="btn btn-success btn-xxs" ng-click="addRating($index)">+</button> {{quote.rating}} / 5
 			</div>
 		</div>
 	</div> <!-- main-container -->

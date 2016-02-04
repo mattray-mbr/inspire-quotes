@@ -1,5 +1,5 @@
 var app = angular.module('myApp', [])
-	app.controller('inspireController', ['$scope', function($scope){
+	app.controller('inspireController', ['$scope', '$timeout', function($scope, $timeout){
 
 		console.log('hello')
 		$scope.randomQ = {}
@@ -42,25 +42,16 @@ var app = angular.module('myApp', [])
 			});
 		}
 		//------------ ratings ---------------
-		$scope.oneStar = function(index){
-			$scope.quotes[index].rating = 1
-			sort();
+		$scope.addRating = function(index){
+			if($scope.quotes[index].rating < 5){
+				$scope.quotes[index].rating += 1
+			}
+			sort()
 		}
-		$scope.twoStars = function(index){
-			$scope.quotes[index].rating = 2
-			sort();
-		}
-		$scope.threeStars = function(index){
-			$scope.quotes[index].rating = 3
-			sort();
-		}
-		$scope.fourStars = function(index){
-			$scope.quotes[index].rating = 4
-			sort();
-		}
-		$scope.fiveStars = function(index){
-			$scope.quotes[index].rating = 5
-			sort();
+		$scope.subtractRating = function(index){
+			if($scope.quotes[index].rating > 0){
+			$scope.quotes[index].rating -= 1
+			}
 		}
 		//----------- end ratings -------------
 
