@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link rel="stylesheet" href="styles.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 	<script src="app.js"></script>
 </head>
 <body ng-controller="inspireController">
@@ -28,7 +29,7 @@
 					<h2>Your Random Quote For The Day Is</h2>
 					<h3>{{randomQ.author}}</h3>
 					<blockquote>{{randomQ.text}}</blockquote>
-					<p class="rating glyphicon glyphicon-fire"></p>
+					<p class="rating"></p>
 					<button class="btn close-pop" ng-click="closePop()">Close</button>
 				</div>
 				<button class="random-btn btn btn-success" ng-click="random($event)">Produce Random Quote</button>
@@ -36,16 +37,27 @@
 		</div> <!-- add quote -->
 	</aside> <!-- side bar -->
 	<div class="main-container">
+		<div class="undo btn btn-danger pull-right btn-xs" ng-show="deleteQue.length" ng-click="undo($index)">Undo Delete</div>
 		<h2 class="quote-header">Recently Added Quotes</h2>
+
 		<div class="quote-list" ng-repeat="quote in quotes">
 		<button class="remove-btn btn btn-danger btn-xs" ng-click="removeQuote($index)">X</button>
 			<h3>{{quote.author}}</h3>
 			<blockquote>
 				<p>{{quote.text}}</p>
 			</blockquote>
-			<div class="rating-container">Rating: 
-				<button class="btn btn-danger btn-xxs" ng-click="subtractRating($index)">-</button>
-				<button class="btn btn-success btn-xxs" ng-click="addRating($index)">+</button> {{quote.rating}} / 5
+			<div class="rating-container">
+					<div class="rate">
+						Rating: {{quote.rating || 0}} / 5
+					</div>
+				 	<button class="rating-btn btn btn-sm">Change Rating <span class="glyphicon glyphicon-triangle-right"></span></button>
+			 		<ul class="drop-menu">
+			 			<li ng-click="rate1($index)">1</li>
+			 			<li ng-click="rate2($index)">2</li>
+			 			<li ng-click="rate3($index)">3</li>
+			 			<li ng-click="rate4($index)">4</li>
+			 			<li ng-click="rate5($index)">5</li>
+				 	</ul>
 			</div>
 		</div>
 	</div> <!-- main-container -->

@@ -3,6 +3,7 @@ var app = angular.module('myApp', [])
 
 		console.log('hello')
 		$scope.randomQ = {}
+		$scope.deleteQue = []
 		$scope.quotes = [
 			{
 				author: "H. Jackson Brown, Jr.",
@@ -42,21 +43,38 @@ var app = angular.module('myApp', [])
 			});
 		}
 		//------------ ratings ---------------
-		$scope.addRating = function(index){
-			if($scope.quotes[index].rating < 5){
-				$scope.quotes[index].rating += 1
-			}
+		$scope.rate1 = function(index){
+			$scope.quotes[index].rating = 1
 			sort()
 		}
-		$scope.subtractRating = function(index){
-			if($scope.quotes[index].rating > 0){
-			$scope.quotes[index].rating -= 1
-			}
+		$scope.rate2 = function(index){
+			$scope.quotes[index].rating = 2
+			sort()
+		}
+		$scope.rate3 = function(index){
+			$scope.quotes[index].rating = 3
+			sort()
+		}
+		$scope.rate4 = function(index){
+			$scope.quotes[index].rating = 4
+			sort()
+		}
+		$scope.rate5 = function(index){
+			$scope.quotes[index].rating = 5
+			sort()
 		}
 		//----------- end ratings -------------
 
 		$scope.removeQuote = function(index){
-			$scope.quotes.splice(index, 1)
+			$scope.deleteQue.push($scope.quotes.splice(index, 1))
+			_.flatten($scope.deleteQue)
+			console.log($scope.deleteQue)
+		}
+
+		$scope.undo = function(index){
+			$scope.quotes.push($scope.deleteQue.pop())
+			_.flatten($scope.quotes)
+			console.log($scope.quotes)
 		}
 
 		$scope.random = function(event){

@@ -143,6 +143,10 @@ label, textarea {
 	text-align: center;
 	color: #ffc992;
 }
+.undo {
+	margin:10px 20px 0 0;
+
+}
 .quote-list{
 	margin:10px 20px;
 	border: 3px solid #ffc992;
@@ -162,6 +166,23 @@ label, textarea {
 	line-height: 0;
 	padding: 5px;
 	padding-bottom:7px;
+}
+.drop-menu {
+	display: none;
+	margin: 0;
+	padding: 0;
+}
+.drop-menu li {
+	float: left;
+	list-style: none;
+	padding: 5px 10px;
+}
+.drop-menu li:hover {
+	background-color: #ffc992;
+}
+.rating-container:hover .drop-menu{
+	display: inline;
+	float:right;
 }
 
 
